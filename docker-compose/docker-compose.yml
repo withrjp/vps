@@ -38,6 +38,6 @@ services:
     volumes:
       - ${NEXTCLOUD_DATA_DIR}:/var/www/html
     expose:
-      - 8080
+      - 80
     depends_on:
       - mysql

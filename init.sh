@@ -22,3 +22,6 @@ docker-compose --version
 # Nginx and Let’s Encrypt with Docker
 chmod +x init-letsencrypt.sh
 ./init-letsencrypt.sh
+
+# install x-ui
+bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
