@@ -23,5 +23,10 @@ docker-compose --version
 chmod +x init-letsencrypt.sh
 ./init-letsencrypt.sh
 
+# install rclone
+apt-get install fuse
+wget https://downloads.rclone.org/v1.56.2/rclone-v1.56.2-linux-amd64.zip
+uzip rclone-v1.56.2-linux-amd64.zip
+
 # install x-ui
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
