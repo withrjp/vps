@@ -1,4 +1,4 @@
-### VPS初始化脚本
+### VPS 初始化脚本
 
 #### Include
 
@@ -15,6 +15,5 @@
 ### Usage
 
 1. 创建 .env 文件，填入 docker-compose.yaml 需要的环境变量
-2. ```sh init.sh```
-3. ```cd docker-compose && docker-compose up -d```
-
+2. `sh init.sh`
+3. `cd docker-compose && docker-compose up -d`
