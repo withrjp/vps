@@ -27,7 +27,7 @@ chmod +x init-letsencrypt.sh
 ./init-letsencrypt.sh
 
 # install rclone
-apt-get install fuse
+apt-get install tmux fuse
 wget https://downloads.rclone.org/v1.56.2/rclone-v1.56.2-linux-amd64.zip
 uzip rclone-v1.56.2-linux-amd64.zip
 mv ./rclone-v1.56.2-linux-amd64/rclone /usr/local/bin/ && rm -rf ./rclone-v1.56.2-linux-amd64
