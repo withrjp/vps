@@ -5,13 +5,19 @@ apt-get update && apt-get install -y git tmux unzip
 chmod +x ./init-*.sh
 
 # install docker
-apt-get update && apt-get install \
-    apt-transport-https \
+apt-get update && apt-get install -y \
     ca-certificates \
     curl \
-    software-properties-common
+    gnupg \
+    lsb-release
 
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+# Add Docker’s official GPG key
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+# set up the stable repository
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 apt-get update && apt-get install docker-ce
 
@@ -24,7 +30,6 @@ chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 
 # Nginx and Let’s Encrypt with Docker
-chmod +x init-letsencrypt.sh
 ./init-letsencrypt.sh
 
 # install x-ui

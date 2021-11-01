@@ -5,6 +5,8 @@ if ! [ -x "$(command -v docker-compose)" ]; then
   exit 1
 fi
 
+cd ./docker-compose
+
 domains=(withrjp.top www.withrjp.top nextcloud.withrjp.top)
 rsa_key_size=4096
 data_path="./certbot"

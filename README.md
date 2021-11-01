@@ -10,10 +10,10 @@
 
 ### Todo
 
-- [ ] 集成 rclone 扩展，白嫖免费网盘扩展 vps 硬盘资源
+- [x] 集成 rclone 扩展，白嫖免费网盘扩展 vps 硬盘资源
 
 ### Usage
 
-1. 创建 .env 文件，填入 docker-compose.yaml 需要的环境变量
-2. `sh init.sh`
-3. `cd docker-compose && docker-compose up -d`
+1. 执行 init-rclone.sh，安装并配置 rclone
+2. 填写 .env 文件中的环境变量
+3. 执行 init.sh
