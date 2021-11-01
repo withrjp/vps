@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # prepare env
-apt-get update && apt-get install git tmux
+apt-get update && apt-get install -y git tmux unzip
+chmod +x ./init-*.sh
 
 # install docker
 apt-get update && apt-get install \
@@ -25,12 +26,6 @@ docker-compose --version
 # Nginx and Let’s Encrypt with Docker
 chmod +x init-letsencrypt.sh
 ./init-letsencrypt.sh
-
-# install rclone
-apt-get install fuse
-wget https://downloads.rclone.org/v1.56.2/rclone-v1.56.2-linux-amd64.zip
-uzip rclone-v1.56.2-linux-amd64.zip
-mv ./rclone-v1.56.2-linux-amd64/rclone /usr/local/bin/ && rm -rf ./rclone-v1.56.2-linux-amd64
 
 # install x-ui
 bash <(curl -Ls https://raw.githubusercontent.com/vaxilu/x-ui/master/install.sh)
