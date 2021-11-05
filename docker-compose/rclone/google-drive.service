@@ -4,7 +4,7 @@ Description=google-drive rclone config
  
 [Service]
 User=root
-ExecStart=/usr/local/bin/rclone mount google-drive /home/gdrive --allow-other --allow-non-empty --vfs-cache-mode writes
+ExecStart=/usr/local/bin/rclone mount google-drive /home/gdrive --allow-other --allow-non-empty --umask 0 --vfs-cache-mode writes
 Restart=on-abort
  
 [Install]
