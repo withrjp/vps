@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# bbr
+wget -N --no-check-certificate "https://raw.githubusercontent.com/chiakge/Linux-NetSpeed/master/tcp.sh"
+chmod +x tcp.sh 
+
 # prepare env
 apt-get update && apt-get install -y git tmux unzip
 chmod +x ./init-*.sh
