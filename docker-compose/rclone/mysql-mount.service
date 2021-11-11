@@ -1,0 +1,11 @@
+# Please put this file in /etc/systemd/system
+[Unit]
+Description=rclone mount for mysql
+ 
+[Service]
+User=root
+ExecStart=/usr/local/bin/rclone mount google-drive:/mysql /home/gdrive/mysql --gid 999 --uid 999 --allow-other --allow-non-empty --umask 0 --vfs-cache-mode writes
+Restart=on-abort
+ 
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+# Please put this file in /etc/systemd/system
+[Unit]
+Description=rclone mount for nextcloud
+ 
+[Service]
+User=root
+ExecStart=/usr/local/bin/rclone mount google-drive:/nextcloud /home/gdrive/nextcloud --allow-other --allow-non-empty --umask 0 --vfs-cache-mode writes
+Restart=on-abort
+ 
+[Install]
+WantedBy=multi-user.target
